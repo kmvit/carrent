@@ -88,9 +88,9 @@
                         </div>
                         <span class="text-gray-400 text-sm md:text-base">Минимальный срок аренды: <%= car.minRentDays %> день</span>
                     </div>
-                    <button class="w-full bg-[#e8b98b] text-gray-900 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base">
+                    <a href="#booking-form" class="block w-full bg-[#e8b98b] text-gray-900 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base text-center">
                         Забронировать
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Дополнительные опции -->
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Форма бронирования -->
-        <div class="card-bg p-4 md:p-8 rounded-lg">
+        <div id="booking-form" class="card-bg p-4 md:p-8 rounded-lg">
             <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 gold-text">Забронировать автомобиль</h2>
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -188,4 +188,11 @@
             </form>
         </div>
     </div>
-</section> 
+</section>
+
+<script>
+function scrollToBookingForm() {
+    const form = document.getElementById('booking-form');
+    form.scrollIntoView({ behavior: 'smooth' });
+}
+</script> 
