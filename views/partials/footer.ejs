@@ -1,0 +1,115 @@
+<!-- Подвал сайта -->
+<footer class="darker-bg py-12">
+    <div class="container mx-auto px-4">
+        <!-- Основной контент футера -->
+        <div class="flex flex-col md:grid md:grid-cols-3 gap-8">
+            <!-- Контактная информация и навигация -->
+            <div class="md:col-span-2">
+                <!-- Мобильная версия -->
+                <div class="flex flex-wrap gap-8 md:hidden">
+                    <!-- Контактная информация -->
+                    <div class="flex-1 min-w-[200px]">
+                        <h3 class="text-xl font-bold gold-text mb-4">Контакты</h3>
+                        <div class="space-y-2">
+                            <p class="text-gray-300">Пятигорск</p>
+                            <p class="text-gray-300">
+                                <a href="tel:89643833383" class="hover:text-[#e8b98b]">8 (964) 383-33-83</a>
+                            </p>
+                            <p class="text-gray-300">
+                                <a href="tel:89510454545" class="hover:text-[#e8b98b]">8 (951) 045-45-45</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Навигация -->
+                    <div class="flex-1 min-w-[200px]">
+                        <h3 class="text-xl font-bold gold-text mb-4">Навигация</h3>
+                        <nav class="space-y-2">
+                            <a href="/#autopark" class="block text-gray-300 hover:text-[#e8b98b]">Автопарк</a>
+                            <a href="/conditions" class="block text-gray-300 hover:text-[#e8b98b]">Условия</a>
+                            <a href="/contacts" class="block text-gray-300 hover:text-[#e8b98b]">Контакты</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Десктопная версия -->
+                <div class="hidden md:grid md:grid-cols-2 gap-8">
+                    <!-- Контактная информация -->
+                    <div>
+                        <h3 class="text-xl font-bold gold-text mb-4">Контакты</h3>
+                        <div class="space-y-2">
+                            <p class="text-gray-300">Пятигорск</p>
+                            <p class="text-gray-300">
+                                <a href="tel:89643833383" class="hover:text-[#e8b98b]">8 (964) 383-33-83</a>
+                            </p>
+                            <p class="text-gray-300">
+                                <a href="tel:89510454545" class="hover:text-[#e8b98b]">8 (951) 045-45-45</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Навигация -->
+                    <div>
+                        <h3 class="text-xl font-bold gold-text mb-4">Навигация</h3>
+                        <nav class="space-y-2">
+                            <a href="/#autopark" class="block text-gray-300 hover:text-[#e8b98b]">Автопарк</a>
+                            <a href="/conditions" class="block text-gray-300 hover:text-[#e8b98b]">Условия</a>
+                            <a href="/contacts" class="block text-gray-300 hover:text-[#e8b98b]">Контакты</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Социальные сети -->
+            <div>
+                <h3 class="text-xl font-bold gold-text mb-4">Мы в соцсетях</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                        <i class="fab fa-vk text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>&copy; <%= new Date().getFullYear() %> Premium Car Rental. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .whatsapp-fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .whatsapp-fixed:hover {
+        transform: scale(1.1);
+        background-color: #128C7E;
+    }
+</style>
+
+<!-- Фиксированная кнопка WhatsApp -->
+<a href="https://wa.me/89643833383" class="whatsapp-fixed" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a> 

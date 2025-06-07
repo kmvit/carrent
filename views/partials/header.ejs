@@ -1,0 +1,91 @@
+<!-- Шапка сайта -->
+<header class="darker-bg shadow-lg fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Логотип -->
+            <a href="/" class="text-2xl font-bold gold-text logo-container">
+                <img src="/img/logo.png" alt="Premium Car Rental" class="logo">
+            </a>
+            
+            <!-- Кнопка мобильного меню -->
+            <button class="md:hidden text-gray-300 hover:text-[#e8b98b] focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Навигация -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="/#autopark" class="text-gray-300 hover:text-[#e8b98b] nav-link">Автопаркы</a>
+                <a href="/conditions" class="text-gray-300 hover:text-[#e8b98b] nav-link">Условия</a>
+                <a href="/contacts" class="text-gray-300 hover:text-[#e8b98b] nav-link">Контакты</a>
+            </nav>
+
+            <!-- Контактная информация -->
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="flex flex-col items-end">
+                    <span class="text-gray-300 text-sm">Пятигорск</span>
+                    <div class="flex space-x-4">
+                        <a href="tel:89643833383" class="text-gray-300 hover:text-[#e8b98b] text-sm">8 (964) 383-33-83</a>
+                        <a href="tel:89510454545" class="text-gray-300 hover:text-[#e8b98b] text-sm">8 (951) 045-45-45</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Социальные сети -->
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                    <i class="fab fa-telegram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                    <i class="fab fa-vk text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-50 transform -translate-x-full transition-transform duration-300" id="mobile-menu">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center mb-8">
+            <!-- Логотип в мобильном меню -->
+            <div class="text-2xl font-bold gold-text logo-container">
+                <img src="/img/logo.png" alt="Premium Car Rental" class="logo">
+            </div>
+            <button class="text-gray-300 hover:text-[#e8b98b] focus:outline-none" id="close-menu-button">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Мобильная навигация -->
+        <nav class="flex flex-col space-y-6 mb-8">
+            <a href="/#autopark" class="text-gray-300 hover:text-[#e8b98b] text-xl">Автопарк</a>
+            <a href="/conditions" class="text-gray-300 hover:text-[#e8b98b] text-xl">Условия</a>
+            <a href="/contacts" class="text-gray-300 hover:text-[#e8b98b] text-xl">Контакты</a>
+        </nav>
+
+        <!-- Мобильные контакты -->
+        <div class="flex flex-col space-y-4">
+            <span class="text-gray-300 text-xl">Пятигорск</span>
+            <div class="flex flex-col space-y-2">
+                <a href="tel:89643833383" class="text-gray-300 hover:text-[#e8b98b] text-xl">8 (964) 383-33-83</a>
+                <a href="tel:89510454545" class="text-gray-300 hover:text-[#e8b98b] text-xl">8 (951) 045-45-45</a>
+            </div>
+        </div>
+
+        <!-- Мобильные социальные сети -->
+        <div class="flex space-x-6 mt-8">
+            <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                <i class="fab fa-telegram text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                <i class="fab fa-vk text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</div> 

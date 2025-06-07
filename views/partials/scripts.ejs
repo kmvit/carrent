@@ -1,0 +1,49 @@
+<!-- Дополнительные скрипты -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+    // Инициализация AOS
+    AOS.init();
+
+    // Инициализация карты
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+            center: [44.013908, 43.079125],
+            zoom: 15
+        });
+
+        var myPlacemark = new ymaps.Placemark([44.013908, 43.079125], {
+            balloonContent: 'Premium Car Rental<br>г. Пятигорск, Горячеводский'
+        }, {
+            preset: 'islands#goldDotIcon'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    });
+</script>
+
+<script>
+    // Функция для работы с галереей
+    function changeImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        const imageCounter = document.getElementById('imageCounter');
+        const index = parseInt(thumbnail.getAttribute('data-index')) + 1;
+        
+        mainImage.src = thumbnail.src;
+        imageCounter.textContent = `${index}/${thumbnail.parentElement.children.length}`;
+        
+        // Обновляем активную миниатюру
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.classList.remove('ring-2', 'ring-[#e8b98b]');
+        });
+        thumbnail.classList.add('ring-2', 'ring-[#e8b98b]');
+    }
+
+    // Устанавливаем активную миниатюру при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstThumbnail = document.querySelector('.thumbnail');
+        if (firstThumbnail) {
+            firstThumbnail.classList.add('ring-2', 'ring-[#e8b98b]');
+        }
+    });
+</script> 

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Условия аренды - Premium Car Rental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="darker-bg shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Логотип -->
+                <div class="text-2xl font-bold gold-text">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Premium Car Rental" class="logo">
+                    </a>
+                </div>
+                
+                <!-- Навигация -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html#autopark" class="text-gray-300 hover:text-[#e8b98b] nav-link">Автопарк</a>
+                    <a href="conditions.html" class="text-gray-300 hover:text-[#e8b98b] nav-link">Условия</a>
+                    <a href="index.html#contacts" class="text-gray-300 hover:text-[#e8b98b] nav-link">Контакты</a>
+                </nav>
+
+                <!-- Социальные сети -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-vk text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="pt-24">
+        <!-- Заголовок страницы -->
+        <section class="py-12 dark-bg">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 gold-text animate-title">Условия аренды</h1>
+                <p class="text-gray-400 text-center max-w-3xl mx-auto">Подробная информация о требованиях к арендаторам, необходимых документах и условиях аренды автомобилей</p>
+            </div>
+        </section>
+
+        <!-- Требования к арендатору -->
+        <section class="py-12 darker-bg">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-8 gold-text">Требования к арендатору</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Возраст и стаж</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Возраст от 21 года</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Стаж вождения от 2 лет</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Отсутствие серьезных нарушений ПДД</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Документы</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Паспорт РФ</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Водительское удостоверение</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>СНИЛС и ИНН</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Условия аренды -->
+        <section class="py-12 dark-bg">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-8 gold-text">Условия аренды</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Сроки аренды</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Минимальный срок - 1 сутки</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Максимальный срок - 30 суток</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Возможность продления</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Оплата</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Банковской картой</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Наличными</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-[#e8b98b] mt-1 mr-3"></i>
+                                    <span>Безналичный расчет</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Дополнительные услуги -->
+        <section class="py-12 darker-bg">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-8 gold-text">Дополнительные услуги</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Детское кресло</h3>
+                            </div>
+                            <p class="text-gray-400">Предоставление детского кресла для безопасной перевозки детей</p>
+                            <p class="text-[#e8b98b] font-bold mt-4">500 ₽/сутки</p>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-snowflake"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Навигатор</h3>
+                            </div>
+                            <p class="text-gray-400">GPS-навигатор с актуальными картами и голосовыми подсказками</p>
+                            <p class="text-[#e8b98b] font-bold mt-4">300 ₽/сутки</p>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="spec-icon">
+                                    <i class="fas fa-gas-pump"></i>
+                                </div>
+                                <h3 class="text-xl font-bold gold-text">Полный бак</h3>
+                            </div>
+                            <p class="text-gray-400">Автомобиль предоставляется с полным баком топлива</p>
+                            <p class="text-[#e8b98b] font-bold mt-4">Включено</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-12 dark-bg">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-8 gold-text">Часто задаваемые вопросы</h2>
+                    <div class="space-y-6">
+                        <div class="card-bg p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4 gold-text">Как забронировать автомобиль?</h3>
+                            <p class="text-gray-400">Вы можете забронировать автомобиль через наш сайт, по телефону или в офисе. Для бронирования необходимо внести предоплату в размере 30% от стоимости аренды.</p>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4 gold-text">Что делать в случае ДТП?</h3>
+                            <p class="text-gray-400">В случае ДТП необходимо немедленно связаться с нами по телефону. Мы предоставим все необходимые инструкции и помощь. Все автомобили застрахованы по КАСКО и ОСАГО.</p>
+                        </div>
+
+                        <div class="card-bg p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4 gold-text">Можно ли вернуть автомобиль раньше срока?</h3>
+                            <p class="text-gray-400">Да, вы можете вернуть автомобиль раньше срока. В этом случае стоимость аренды пересчитывается по фактическому времени использования.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="darker-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="gold-text">&copy; <span class="copyright-year">2024</span> Premium Car Rental. Все права защищены.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-vk text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Фиксированная кнопка WhatsApp -->
+    <a href="https://wa.me/79991234567" class="whatsapp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
