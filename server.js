@@ -3,6 +3,8 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const cars = require('./data/cars');
+const { sendBookingNotification } = require('./config/mailer');
+const apiRoutes = require('./routes/api');
 require('dotenv').config();
 
 const app = express();
@@ -44,12 +46,23 @@ app.use((req, res, next) => {
     }
 });
 
-// Настройка транспорта для отправки писем
+// Настройка транспорта для отправки email
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.yandex.ru',
+    port: 465,
+    secure: true, // true для порта 465, false для других портов
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    }
+});
+
+// Проверка подключения к почтовому серверу
+transporter.verify(function(error, success) {
+    if (error) {
+        console.log('Ошибка подключения к почтовому серверу:', error);
+    } else {
+        console.log('Сервер готов к отправке писем');
     }
 });
 
@@ -80,6 +93,9 @@ app.post('/api/feedback', async (req, res) => {
         res.status(500).json({ success: false, message: 'Ошибка при отправке заявки' });
     }
 });
+
+// Подключаем API-маршруты
+app.use('/api', apiRoutes);
 
 // Маршруты
 app.get('/', (req, res) => {

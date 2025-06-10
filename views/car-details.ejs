@@ -1,4 +1,6 @@
 <!-- Детальная страница автомобиля -->
+<meta name="car-id" content="<%= car.id %>">
+
 <section class="py-6 md:py-12 darker-bg">
     <div class="container mx-auto px-4">
         <!-- Хлебные крошки -->
@@ -88,9 +90,9 @@
                         </div>
                         <span class="text-gray-400 text-sm md:text-base">Минимальный срок аренды: <%= car.minRentDays %> день</span>
                     </div>
-                    <a href="#booking-form" class="block w-full bg-[#e8b98b] text-gray-900 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base text-center">
+                    <button onclick="openBookingModal()" class="block w-full bg-[#e8b98b] text-gray-900 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base text-center">
                         Забронировать
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Дополнительные опции -->
@@ -153,40 +155,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Форма бронирования -->
-        <div id="booking-form" class="card-bg p-4 md:p-8 rounded-lg">
-            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 gold-text">Забронировать автомобиль</h2>
-            <form class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-400 mb-2 text-sm md:text-base">Дата начала</label>
-                        <input type="date" class="w-full px-3 md:px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white text-sm md:text-base">
-                    </div>
-                    <div>
-                        <label class="block text-gray-400 mb-2 text-sm md:text-base">Дата окончания</label>
-                        <input type="date" class="w-full px-3 md:px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white text-sm md:text-base">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-gray-400 mb-2 text-sm md:text-base">Город</label>
-                    <input type="text" class="w-full px-3 md:px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white text-sm md:text-base">
-                </div>
-                <div>
-                    <label class="block text-gray-400 mb-2 text-sm md:text-base">Телефон</label>
-                    <input type="tel" class="w-full px-3 md:px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white text-sm md:text-base">
-                </div>
-                <button type="submit" class="w-full bg-[#e8b98b] text-gray-900 py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base">
-                    Забронировать
-                </button>
-            </form>
-        </div>
     </div>
 </section>
 
-<script>
-function scrollToBookingForm() {
-    const form = document.getElementById('booking-form');
-    form.scrollIntoView({ behavior: 'smooth' });
-}
-</script> 
+<%- include('partials/booking-modal') %> 
