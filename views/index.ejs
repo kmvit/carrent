@@ -3,7 +3,6 @@
     <div class="absolute inset-0 overflow-hidden">
         <!-- Фоновый градиент -->
         <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800"></div>
-        
         <!-- Видео -->
         <video 
             autoplay 
@@ -11,21 +10,17 @@
             loop 
             playsinline 
             class="w-full h-full object-cover relative z-10"
-            onerror="this.style.display='none'; document.getElementById('videoError').style.display='block';"
-        >
+            onerror="this.style.display='none'; document.getElementById('videoError').style.display='block';">
             <source src="/video/video-2.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
-        
         <!-- Сообщение об ошибке -->
         <div id="videoError" class="hidden absolute inset-0 flex items-center justify-center z-20">
             <p class="text-white text-xl">Видео временно недоступно</p>
         </div>
     </div>
-    
     <!-- Затемнение -->
     <div class="absolute inset-0 bg-black opacity-70 z-30"></div>
-    
     <!-- Контент -->
     <div class="relative container mx-auto px-4 h-full flex items-center justify-center text-center z-40">
         <div class="text-white max-w-4xl animate-content">
@@ -37,12 +32,10 @@
         </div>
     </div>
 </section>
-
 <!-- Секция автопарка -->
 <section id="autopark" class="py-12 darker-bg">
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Наш автопарк</h2>
-        
         <!-- Категории автомобилей -->
         <div class="grid grid-cols-2 sm:grid-cols-2 md:flex md:flex-wrap justify-center gap-4 mb-12">
             <a href="#premium" class="category-link group">
@@ -52,7 +45,6 @@
                     <p class="text-sm text-gray-400">Флагманские модели</p>
                 </div>
             </a>
-
             <a href="#business" class="category-link group">
                 <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
                     <i class="fas fa-briefcase text-3xl gold-text mb-2"></i>
@@ -60,7 +52,6 @@
                     <p class="text-sm text-gray-400">Для деловых поездок</p>
                 </div>
             </a>
-
             <a href="#comfort" class="category-link group">
                 <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
                     <i class="fas fa-couch text-3xl gold-text mb-2"></i>
@@ -68,7 +59,6 @@
                     <p class="text-sm text-gray-400">Комфортные автомобили</p>
                 </div>
             </a>
-
             <a href="#economy" class="category-link group">
                 <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
                     <i class="fas fa-car text-3xl gold-text mb-2"></i>
@@ -76,7 +66,6 @@
                     <p class="text-sm text-gray-400">Городской комфорт и бюджет</p>
                 </div>
             </a>
-
             <a href="#minivans" class="category-link group">
                 <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
                     <i class="fas fa-van-shuttle text-3xl gold-text mb-2"></i>
@@ -127,7 +116,6 @@
                     </div>
                 </div>
             </a>
-
             <!-- Mercedes-Benz S-Класс 350 CDI BlueTEC W222 -->
             <a href="/car-details?id=mercedes-s-class-w222" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
                 <div class="h-48 bg-gray-800">
@@ -698,7 +686,6 @@
                 </div>
                 <p class="text-gray-400">Брали минивэн для семейной поездки. Все прошло отлично, автомобиль чистый, комфортный. Спасибо за качественный сервис!</p>
             </div>
-
             <!-- Отзыв 3 -->
             <div class="card-bg rounded-lg p-6">
                 <div class="flex items-center mb-4">
@@ -721,7 +708,6 @@
         </div>
     </div>
 </section>
-
 <!-- Секция контактов -->
 <section id="contacts" class="py-12 darker-bg">
     <div class="container mx-auto px-4">
@@ -740,7 +726,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-envelope gold-text text-xl w-8"></i>
-                        <span class="text-gray-400">info@premiumcar.ru</span>
+                        <span class="text-gray-400">carskfo@yandex.ru</span>
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-map-marker-alt gold-text text-xl w-8"></i>
@@ -796,7 +782,6 @@
                     <h3 class="text-2xl font-bold gold-text">Скидка 10% на длительную аренду</h3>
                 </div>
                 <p class="text-gray-400 mb-4">При аренде автомобиля на срок от 7 дней предоставляется скидка 10% от базовой стоимости.</p>
-  
             </div>
 
             <!-- Предложение 2 -->
@@ -806,7 +791,6 @@
                     <h3 class="text-2xl font-bold gold-text">Бесплатный полный бак</h3>
                 </div>
                 <p class="text-gray-400 mb-4">При аренде премиум-автомобиля на срок от 3 дней получайте полный бак топлива в подарок.</p>
-
             </div>
         </div>
     </div>
