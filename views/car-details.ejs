@@ -97,15 +97,13 @@
                 <div class="border-t border-gray-700 pt-4 md:pt-6">
                     <h3 class="text-lg md:text-xl font-bold gold-text mb-3 md:mb-4">Дополнительные опции</h3>
                     <div class="space-y-2 md:space-y-4">
-                        <% car.options.forEach(option => { %>
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-                                <div class="flex items-center">
-                                    <i class="<%= option.icon %> gold-text text-base md:text-xl w-6 md:w-8"></i>
-                                    <span class="text-gray-300 text-xs sm:text-sm md:text-base truncate"><%= option.name %></span>
-                                </div>
-                                <span class="text-gray-400 text-xs sm:text-sm md:text-base pl-6 sm:pl-0"><%= option.price %></span>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-user gold-text text-base md:text-xl w-6 md:w-8"></i>
+                                <span class="text-gray-300 text-xs sm:text-sm md:text-base truncate">Водитель</span>
                             </div>
-                        <% }); %>
+                            <span class="text-gray-400 text-xs sm:text-sm md:text-base pl-6 sm:pl-0">Цена по запросу</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,10 +139,6 @@
                     <ul class="space-y-2 md:space-y-3 text-gray-400">
                         <li class="flex items-center text-sm md:text-base">
                             <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
-                            Скидка от 5% до 20% по карте премиального клуба
-                        </li>
-                        <li class="flex items-center text-sm md:text-base">
-                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
                             При аренде более 5 суток стоимость договорная
                         </li>
                         <li class="flex items-center text-sm md:text-base">
@@ -153,7 +147,7 @@
                         </li>
                         <li class="flex items-center text-sm md:text-base">
                             <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
-                            Страховка включена в стоимость
+                            Страховка авто включена в стоимость
                         </li>
                     </ul>
                 </div>

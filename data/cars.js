@@ -6,8 +6,8 @@ const cars = {
         fuel: 'Дизель',
         transmission: 'АКПП 9 ступ.',
         drive: 'Полный привод',
-        price: '25 000',
-        weekendPrice: '35 000',
+        price: '60 000',
+        weekendPrice: '70 000',
         hourlyPrice: '5 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -59,8 +59,8 @@ const cars = {
         fuel: 'Дизель',
         transmission: 'АКПП 7 ступ.',
         drive: 'Задний привод',
-        price: '22 000',
-        weekendPrice: '32 000',
+        price: '25 000',
+        weekendPrice: '35 000',
         hourlyPrice: '5 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -171,8 +171,8 @@ const cars = {
         fuel: 'Дизель',
         transmission: 'АКПП 8 ступ.',
         drive: 'Полный привод',
-        price: '23 000',
-        weekendPrice: '33 000',
+        price: '30 000',
+        weekendPrice: '40 000',
         hourlyPrice: '5 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -223,8 +223,8 @@ const cars = {
         fuel: 'Дизель',
         transmission: 'АКПП 9 ступ.',
         drive: 'Полный привод',
-        price: '13 000',
-        weekendPrice: '15 000',
+        price: '30 000',
+        weekendPrice: '40 000',
         hourlyPrice: '3 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -270,330 +270,6 @@ const cars = {
             }
         }
     },
-    'mercedes-e-class': {
-        name: 'Mercedes-Benz E-Класс',
-        description: 'Бизнес-седан',
-        power: 184,
-        fuel: 'Дизель',
-        transmission: 'АКПП 9 ступ.',
-        drive: 'Задний привод',
-        price: '18 000',
-        weekendPrice: '20 000',
-        hourlyPrice: '4 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/mersedes-e300/main.jpeg',
-            '/img/cars/mersedes-e300/IMG_20250606_142859_276.jpg',
-            '/img/cars/mersedes-e300/IMG_20250606_142902_613.jpg',
-            '/img/cars/mersedes-e300/IMG_20250606_142907_120.jpg',
-            '/img/cars/mersedes-e300/IMG_20250606_142911_182.jpg',
-            '/img/cars/mersedes-e300/IMG_20250606_142918_710.jpg',
-            '/img/cars/mersedes-e300/IMG_20250606_142934_446.jpg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+500 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Комфортный салон с качественной отделкой',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система MBUX',
-            'Адаптивная подвеска',
-            'Электрорегулировка сидений с памятью',
-            'Двухзонный климат-контроль'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '2.0 л',
-                'Тип трансмиссии': 'АКПП 9 ступ.',
-                'Расход топлива': '5.5 л/100км',
-                'Разгон до 100 км/ч': '7.3 сек',
-                'Максимальная скорость': '235 км/ч'
-            },
-            right: {
-                'Тип привода': 'Задний привод',
-                'Тип топлива': 'Дизель',
-                'Мощность': '184 л.с.',
-                'Крутящий момент': '380 Нм',
-                'Объем багажника': '540 л'
-            }
-        }
-    },
-    'bmw-5-series': {
-        name: 'BMW 5 Series 520d',
-        description: 'Бизнес-седан',
-        power: 190,
-        fuel: 'Дизель',
-        transmission: 'АКПП 8 ступ.',
-        drive: 'Задний привод',
-        price: '15 000',
-        weekendPrice: '17 000',
-        hourlyPrice: '3 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/bmvg30d/main.jpg',
-            '/img/cars/bmvg30d/IMG_20250606_142542_838.jpg',
-            '/img/cars/bmvg30d/IMG_20250606_142546_980.jpg',
-            '/img/cars/bmvg30d/IMG_20250606_142549_681.jpg',
-            '/img/cars/bmvg30d/IMG_20250606_142556_212.jpg',
-            '/img/cars/bmvg30d/IMG_20250606_142600_005.jpg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+500 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Комфортный салон с качественной отделкой',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система iDrive',
-            'Адаптивная подвеска',
-            'Электрорегулировка сидений с памятью',
-            'Двухзонный климат-контроль'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '2.0 л',
-                'Тип трансмиссии': 'АКПП 8 ступ.',
-                'Расход топлива': '5.4 л/100км',
-                'Разгон до 100 км/ч': '7.5 сек',
-                'Максимальная скорость': '230 км/ч'
-            },
-            right: {
-                'Тип привода': 'Задний привод',
-                'Тип топлива': 'Дизель',
-                'Мощность': '190 л.с.',
-                'Крутящий момент': '400 Нм',
-                'Объем багажника': '530 л'
-            }
-        }
-    },
-    'audi-a6': {
-        name: 'Audi A6 40 TDI',
-        description: 'Бизнес-седан',
-        power: 204,
-        fuel: 'Дизель',
-        transmission: 'АКПП 7 ступ.',
-        drive: 'Полный привод',
-        price: '16 000',
-        weekendPrice: '18 000',
-        hourlyPrice: '3 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/audi-a6/main.jpg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+500 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Комфортный салон с качественной отделкой',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система MMI',
-            'Адаптивная подвеска',
-            'Электрорегулировка сидений с памятью',
-            'Двухзонный климат-контроль'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '2.0 л',
-                'Тип трансмиссии': 'АКПП 7 ступ.',
-                'Расход топлива': '5.6 л/100км',
-                'Разгон до 100 км/ч': '7.3 сек',
-                'Максимальная скорость': '235 км/ч'
-            },
-            right: {
-                'Тип привода': 'Полный привод',
-                'Тип топлива': 'Дизель',
-                'Мощность': '204 л.с.',
-                'Крутящий момент': '400 Нм',
-                'Объем багажника': '530 л'
-            }
-        }
-    },
-    'kia-rio': {
-        name: 'Kia Rio',
-        description: 'Городской автомобиль',
-        power: 123,
-        fuel: 'Бензин',
-        transmission: 'АКПП 6 ступ.',
-        drive: 'Передний привод',
-        price: '3 000',
-        weekendPrice: '4 000',
-        hourlyPrice: '1 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/kia-rio/main.jpg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+300 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Компактный и экономичный',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система с Apple CarPlay и Android Auto',
-            'Кондиционер',
-            'Электрорегулировка зеркал',
-            'Передние электростеклоподъемники'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '1.6 л',
-                'Тип трансмиссии': 'АКПП 6 ступ.',
-                'Расход топлива': '6.2 л/100км',
-                'Разгон до 100 км/ч': '11.2 сек',
-                'Максимальная скорость': '185 км/ч'
-            },
-            right: {
-                'Тип привода': 'Передний привод',
-                'Тип топлива': 'Бензин',
-                'Мощность': '123 л.с.',
-                'Крутящий момент': '151 Нм',
-                'Объем багажника': '325 л'
-            }
-        }
-    },
-    'hyundai-solaris': {
-        name: 'Hyundai Solaris',
-        description: 'Городской автомобиль',
-        power: 123,
-        fuel: 'Бензин',
-        transmission: 'АКПП 6 ступ.',
-        drive: 'Передний привод',
-        price: '2 800',
-        weekendPrice: '3 800',
-        hourlyPrice: '1 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/hyundai-solaris/main.jpg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+300 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Компактный и экономичный',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система с Apple CarPlay и Android Auto',
-            'Кондиционер',
-            'Электрорегулировка зеркал',
-            'Передние электростеклоподъемники'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '1.6 л',
-                'Тип трансмиссии': 'АКПП 6 ступ.',
-                'Расход топлива': '6.1 л/100км',
-                'Разгон до 100 км/ч': '11.2 сек',
-                'Максимальная скорость': '185 км/ч'
-            },
-            right: {
-                'Тип привода': 'Передний привод',
-                'Тип топлива': 'Бензин',
-                'Мощность': '123 л.с.',
-                'Крутящий момент': '151 Нм',
-                'Объем багажника': '325 л'
-            }
-        }
-    },
-    'volkswagen-polo': {
-        name: 'Volkswagen Polo',
-        description: 'Городской автомобиль',
-        power: 110,
-        fuel: 'Бензин',
-        transmission: 'АКПП 6 ступ.',
-        drive: 'Передний привод',
-        price: '3 200',
-        weekendPrice: '4 200',
-        hourlyPrice: '1 000',
-        minRentDays: 1,
-        minRentHours: 3,
-        images: [
-            '/img/cars/polo/main.jpg',
-            '/img/cars/polo/images.jpeg'
-        ],
-        options: [
-            {
-                icon: 'fas fa-child',
-                name: 'Детское кресло',
-                price: '+300 ₽/сутки'
-            },
-            {
-                icon: 'fas fa-car',
-                name: 'Водитель',
-                price: '+3000 ₽/сутки'
-            }
-        ],
-        features: [
-            'Компактный и экономичный',
-            'Системы безопасности и помощи водителю',
-            'Мультимедийная система с Apple CarPlay и Android Auto',
-            'Кондиционер',
-            'Электрорегулировка зеркал',
-            'Передние электростеклоподъемники'
-        ],
-        specs: {
-            left: {
-                'Объем двигателя': '1.6 л',
-                'Тип трансмиссии': 'АКПП 6 ступ.',
-                'Расход топлива': '6.0 л/100км',
-                'Разгон до 100 км/ч': '11.9 сек',
-                'Максимальная скорость': '183 км/ч'
-            },
-            right: {
-                'Тип привода': 'Передний привод',
-                'Тип топлива': 'Бензин',
-                'Мощность': '110 л.с.',
-                'Крутящий момент': '155 Нм',
-                'Объем багажника': '351 л'
-            }
-        }
-    },
     'volkswagen-polo-auto': {
         name: 'Volkswagen Polo',
         description: 'Городской автомобиль',
@@ -608,7 +284,8 @@ const cars = {
         minRentHours: 3,
         images: [
             '/img/cars/polo/main.jpg',
-            '/img/cars/polo/images.jpeg'
+            '/img/cars/polo/2.jpg',
+            '/img/cars/polo/i.webp',
         ],
         options: [
             {
@@ -661,8 +338,7 @@ const cars = {
         minRentHours: 3,
         images: [
             '/img/cars/polo-2/main.jpg',
-            '/img/cars/polo-2/big_1325466.webp',
-            '/img/cars/polo-2/0240PAS056136-1.jpg'
+            '/img/cars/polo-2/4.webp',
         ],
         options: [
             {
@@ -825,11 +501,11 @@ const cars = {
         minRentDays: 1,
         minRentHours: 3,
         images: [
-            '/img/cars/quest/main.jpg',
-            '/img/cars/quest/IMG_20250606_142815_450.jpg',
-            '/img/cars/quest/IMG_20250606_142818_155.jpg',
-            '/img/cars/quest/IMG_20250606_142833_088.jpg',
-            '/img/cars/quest/IMG_20250606_142839_238.jpg'
+            '/img/cars/nissan/main.jpg',
+            '/img/cars/nissan/1.jpg',
+            '/img/cars/nissan/2.jpg',
+            '/img/cars/nissan/3.jpg',
+            '/img/cars/nissan/4.jpg',
         ],
         options: [
             {
@@ -1068,7 +744,7 @@ const cars = {
             }
         ]
     },
-    'mercedes-e-class-w213': {
+    'mercedes-e-class': {
         name: 'Mercedes-Benz E-Класс E300 AMG W213',
         description: 'Бизнес-седан',
         power: 245,
@@ -1081,7 +757,13 @@ const cars = {
         minRentDays: 1,
         minRentHours: 3,
         images: [
-            '/img/cars/e213/main.jpg'
+            '/img/cars/mersedes-e300/main.jpeg',
+            '/img/cars/mersedes-e300/IMG_20250606_142859_276.jpg',
+            '/img/cars/mersedes-e300/IMG_20250606_142902_613.jpg',
+            '/img/cars/mersedes-e300/IMG_20250606_142907_120.jpg',
+            '/img/cars/mersedes-e300/IMG_20250606_142911_182.jpg',
+            '/img/cars/mersedes-e300/IMG_20250606_142918_710.jpg',
+            '/img/cars/mersedes-e300/IMG_20250606_142934_446.jpg',
         ],
         options: [
             {
@@ -1096,7 +778,7 @@ const cars = {
             }
         ]
     },
-    'bmw-5-g30': {
+    'bmw-5-series': {
         name: 'BMW 5 G30',
         description: 'Бизнес-седан',
         power: 190,
@@ -1109,7 +791,12 @@ const cars = {
         minRentDays: 1,
         minRentHours: 3,
         images: [
-            '/img/cars/bmw-g30/main.jpg'
+            '/img/cars/bmvg30d/main.jpg',
+            '/img/cars/bmvg30d/IMG_20250606_142542_838.jpg',
+            '/img/cars/bmvg30d/IMG_20250606_142546_980.jpg',
+            '/img/cars/bmvg30d/IMG_20250606_142549_681.jpg',
+            '/img/cars/bmvg30d/IMG_20250606_142556_212.jpg',
+            '/img/cars/bmvg30d/IMG_20250606_142600_005.jpg',
         ],
         options: [
             {
