@@ -75,7 +75,7 @@ app.post('/api/feedback', async (req, res) => {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            subject: 'Новая заявка с сайта Premium Car Rental',
+            subject: 'Новая заявка с сайта CarSKFO',
             html: `
                 <h2>Новая заявка</h2>
                 <p><strong>Имя:</strong> ${name}</p>
@@ -100,16 +100,16 @@ app.use('/api', apiRoutes);
 // Маршруты
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Главная',
+        title: 'Аренда премиум автомобилей в Пятигорске | CarSKFO',
         description: 'Премиум автомобили в аренду в Пятигорске',
-        keywords: 'аренда автомобилей, премиум автомобили, Пятигорск'
+        keywords: 'аренда автомобилей, премиум автомобили, Пятигорск, CarSKFO.ru'
     });
 });
 
 app.get('/contacts', (req, res) => {
     res.render('contacts', {
         title: 'Контакты',
-        description: 'Контактная информация Premium Car Rental',
+        description: 'Контактная информация CarSKFO.ru',
         keywords: 'контакты, адрес, телефон, аренда автомобилей'
     });
 });
@@ -117,7 +117,7 @@ app.get('/contacts', (req, res) => {
 app.get('/conditions', (req, res) => {
     res.render('conditions', {
         title: 'Условия аренды',
-        description: 'Условия аренды автомобилей Premium Car Rental',
+        description: 'Условия аренды автомобилей CarSKFO.ru',
         keywords: 'условия аренды, требования, документы'
     });
 });
@@ -137,9 +137,9 @@ app.get('/car-details', (req, res) => {
     }
 
     res.render('car-details', {
-        title: car.name,
+        title: 'Аренда ' + car.name + ' в Пятигорске | CarSKFO',
         description: car.description,
-        keywords: `${car.name}, аренда, премиум автомобили`,
+        keywords: `${car.name}, аренда в Пятигорске, премиум автомобили`,
         car: car
     });
 });
