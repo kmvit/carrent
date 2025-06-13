@@ -1,0 +1,303 @@
+body {
+    background-color: #141414;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.dark-bg {
+    background-color: #141414;
+    position: relative;
+    z-index: 1;
+}
+
+.darker-bg {
+    background-color: #0a0a0a;
+    position: relative;
+    z-index: 1;
+}
+
+.card-bg {
+    background-color: #1a1a1a;
+    position: relative;
+    z-index: 1;
+}
+
+.gold-text {
+    color: #e8b98b;
+}
+
+.banner-title {
+    font-size: 5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #e8b98b, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px rgba(232, 185, 139, 0.5),
+                   0 0 20px rgba(232, 185, 139, 0.3),
+                   0 0 30px rgba(232, 185, 139, 0.1);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(232, 185, 139, 0.8),
+                   0 0 30px rgba(232, 185, 139, 0.5),
+                   0 0 40px rgba(232, 185, 139, 0.3);
+    }
+}
+
+.banner-subtitle {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.car-card {
+    transition: all 0.5s ease;
+    transform: translateY(0);
+    opacity: 1;
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.car-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.car-card:hover .car-info {
+    opacity: 1;
+}
+
+.car-spec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.car-spec i {
+    width: 24px;
+    margin-right: 0.75rem;
+    color: #e8b98b;
+}
+
+.car-spec span {
+    font-size: 0.9rem;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #e8b98b;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.animate-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.animate-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.8s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.animate-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-fixed:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-fixed i {
+    color: white;
+    font-size: 32px;
+}
+
+/* Стили для логотипа */
+.logo {
+    height: 40px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Стили для логотипа */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #e8b98b, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Стили для контейнера логотипа */
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 1rem;
+}
+
+.swiper {
+    width: 100%;
+    height: 80vh;
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spec-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 185, 139, 0.1);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.spec-icon i {
+    color: #e8b98b;
+    font-size: 1.25rem;
+}
+
+.price-table th {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    text-align: left;
+    color: #e8b98b;
+}
+
+.price-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* Стили для категорий */
+.category-link {
+    min-width: 160px;
+    text-decoration: none;
+}
+
+.category-link:hover .gold-text {
+    color: #d4a87a;
+}
+
+.category-link:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Анимация для иконок категорий */
+.category-link i {
+    transition: transform 0.3s ease;
+}
+
+/* Стили для фильтра */
+.inline-flex button {
+    transition: all 0.3s ease;
+}
+
+.inline-flex button:hover {
+    background-color: rgba(232, 185, 139, 0.1);
+}
+
+/* Исправление z-index для мобильного меню */
+#mobile-menu {
+    z-index: 1000;
+}
+
+/* Добавление стилей для основного контента */
+main {
+    position: relative;
+    z-index: 1;
+} 

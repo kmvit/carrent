@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Car Rental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="darker-bg shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Логотип -->
+                <div class="text-2xl font-bold gold-text logo-container">
+                    <img src="/img/logo.png" alt="Premium Car Rental" class="logo">
+                </div>
+                
+                <!-- Кнопка мобильного меню -->
+                <button class="md:hidden text-gray-300 hover:text-[#e8b98b] focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Навигация -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#autopark" class="text-gray-300 hover:text-[#e8b98b] nav-link">Автопарк</a>
+                    <a href="conditions.html" class="text-gray-300 hover:text-[#e8b98b] nav-link">Условия</a>
+                    <a href="contacts.html" class="text-gray-300 hover:text-[#e8b98b] nav-link">Контакты</a>
+                </nav>
+
+                <!-- Контактная информация -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="flex flex-col items-end">
+                        <span class="text-gray-300 text-sm">Пятигорск</span>
+                        <div class="flex space-x-4">
+                            <a href="tel:89643833383" class="text-gray-300 hover:text-[#e8b98b] text-sm">8 (964) 383-33-83</a>
+                            <a href="tel:89510454545" class="text-gray-300 hover:text-[#e8b98b] text-sm">8 (951) 045-45-45</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Социальные сети -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-vk text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-50 transform -translate-x-full transition-transform duration-300" id="mobile-menu">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center mb-8">
+                <!-- Логотип в мобильном меню -->
+                <div class="text-2xl font-bold gold-text logo-container">
+                    <img src="/img/logo.png" alt="Premium Car Rental" class="logo">
+                </div>
+                <button class="text-gray-300 hover:text-[#e8b98b] focus:outline-none" id="close-menu-button">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Мобильная навигация -->
+            <nav class="flex flex-col space-y-6 mb-8">
+                <a href="#autopark" class="text-gray-300 hover:text-[#e8b98b] text-xl">Автопарк</a>
+                <a href="conditions.html" class="text-gray-300 hover:text-[#e8b98b] text-xl">Условия</a>
+                <a href="contacts.html" class="text-gray-300 hover:text-[#e8b98b] text-xl">Контакты</a>
+            </nav>
+
+            <!-- Мобильные контакты -->
+            <div class="flex flex-col space-y-4">
+                <span class="text-gray-300 text-xl">Пятигорск</span>
+                <div class="flex flex-col space-y-2">
+                    <a href="tel:89643833383" class="text-gray-300 hover:text-[#e8b98b] text-xl">8 (964) 383-33-83</a>
+                    <a href="tel:89510454545" class="text-gray-300 hover:text-[#e8b98b] text-xl">8 (951) 045-45-45</a>
+                </div>
+            </div>
+
+            <!-- Мобильные социальные сети -->
+            <div class="flex space-x-6 mt-8">
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                    <i class="fab fa-telegram text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-[#e8b98b]">
+                    <i class="fab fa-vk text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главный баннер -->
+    <section class="relative h-[500px] md:h-[700px] dark-bg mt-16">
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Фоновый градиент -->
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800"></div>
+            
+            <!-- Видео -->
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover relative z-10"
+                onerror="this.style.display='none'; document.getElementById('videoError').style.display='block';"
+            >
+                <source src="/video/video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            
+            <!-- Сообщение об ошибке -->
+            <div id="videoError" class="hidden absolute inset-0 flex items-center justify-center z-20">
+                <p class="text-white text-xl">Видео временно недоступно</p>
+            </div>
+        </div>
+        
+        <!-- Затемнение -->
+        <div class="absolute inset-0 bg-black opacity-70 z-30"></div>
+        
+        <!-- Контент -->
+        <div class="relative container mx-auto px-4 h-full flex items-center justify-center text-center z-40">
+            <div class="text-white max-w-4xl animate-content">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 gold-text">Премиум автомобили в аренду</h1>
+                <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-10 text-gray-300">Комфорт и стиль в каждой поездке</p>
+                <a href="#autopark" class="inline-block bg-[#e8b98b] text-gray-900 px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-lg">
+                    Выбрать автомобиль
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция автопарка -->
+    <section id="autopark" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Наш автопарк</h2>
+            
+            <!-- Категории автомобилей -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="#premium" class="category-link group">
+                    <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-crown text-3xl gold-text mb-2"></i>
+                        <h3 class="text-lg font-semibold gold-text">Премиум</h3>
+                        <p class="text-sm text-gray-400">Флагманские модели</p>
+                    </div>
+                </a>
+
+                <a href="#business" class="category-link group">
+                    <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-briefcase text-3xl gold-text mb-2"></i>
+                        <h3 class="text-lg font-semibold gold-text">Бизнес</h3>
+                        <p class="text-sm text-gray-400">Для деловых поездок</p>
+                    </div>
+                </a>
+
+                <a href="#economy" class="category-link group">
+                    <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-car text-3xl gold-text mb-2"></i>
+                        <h3 class="text-lg font-semibold gold-text">Эконом</h3>
+                        <p class="text-sm text-gray-400">Городской комфорт</p>
+                    </div>
+                </a>
+
+                <a href="#minivans" class="category-link group">
+                    <div class="bg-gray-800 rounded-lg p-4 text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-van-shuttle text-3xl gold-text mb-2"></i>
+                        <h3 class="text-lg font-semibold gold-text">Минивэны</h3>
+                        <p class="text-sm text-gray-400">Комфорт для всей семьи</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел Премиум -->
+    <section id="premium" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Премиум</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mercedes-Benz S-Класс w223 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz S-Класс w223" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mercedes-Benz S-Класс w223 350 d Long 4MATIC</h3>
+                        <p class="text-gray-400 mb-4">Флагманский седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">25 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>249 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Дизель</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 9 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Полный привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Остальные премиум автомобили -->
+                <!-- Mercedes-Benz S-Класс 350 CDI BlueTEC W222 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz S-Класс W222" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mercedes-Benz S-Класс 350 CDI BlueTEC W222</h3>
+                        <p class="text-gray-400 mb-4">Премиальный седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">22 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>249 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Дизель</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 7 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Полный привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- BMW 7 G12 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="BMW 7 G12" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">BMW 7 G12</h3>
+                        <p class="text-gray-400 mb-4">Флагманский седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">24 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>249 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Дизель</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 9 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Полный привод</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел Бизнес -->
+    <section id="business" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Бизнес</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mercedes-Benz C-Класс W205 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz C-Класс W205" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mercedes-Benz C-Класс W205</h3>
+                        <p class="text-gray-400 mb-4">Бизнес-седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">12 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>156 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 7 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Задний привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Mercedes-Benz E-Класс E300 AMG W213 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz E-Класс E300 AMG W213" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mercedes-Benz E-Класс E300 AMG W213</h3>
+                        <p class="text-gray-400 mb-4">Бизнес-седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">15 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>245 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 9 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Задний привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- BMW 5 G30 -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="BMW 5 G30" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">BMW 5 G30</h3>
+                        <p class="text-gray-400 mb-4">Бизнес-седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">14 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>190 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Дизель</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 9 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Задний привод</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел Эконом -->
+    <section id="economy" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Эконом</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hyundai Elantra -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hyundai Elantra" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Hyundai Elantra</h3>
+                        <p class="text-gray-400 mb-4">Экономичный седан</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">5 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>150 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 6 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Передний привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Volkswagen Polo АКПП -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Volkswagen Polo АКПП" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Volkswagen Polo АКПП</h3>
+                        <p class="text-gray-400 mb-4">Экономичный хэтчбек</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">4 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>110 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 6 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Передний привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Volkswagen Polo МКПП -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Volkswagen Polo МКПП" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Volkswagen Polo МКПП</h3>
+                        <p class="text-gray-400 mb-4">Экономичный хэтчбек</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">3 500 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>110 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>МКПП 6 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Передний привод</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел Минивэны -->
+    <section id="minivans" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Минивэны</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mercedes-Benz V-Класс -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz V-Класс" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Mercedes-Benz V-Класс</h3>
+                        <p class="text-gray-400 mb-4">Премиальный минивэн</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">18 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>239 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Дизель</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 9 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Полный привод</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Nissan Quest -->
+                <a href="car-details.html" class="card-bg rounded-lg shadow-lg overflow-hidden car-card">
+                    <div class="h-48 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nissan Quest" class="w-full h-full object-cover car-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Nissan Quest</h3>
+                        <p class="text-gray-400 mb-4">Комфортный минивэн</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold gold-text price">15 000 ₽/сутки</span>
+                            <button class="bg-[#e8b98b] text-gray-900 px-4 py-2 rounded hover:bg-[#d4a87a] transition btn">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>272 л.с.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Бензин</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-cog"></i>
+                            <span>АКПП 6 ступ.</span>
+                        </div>
+                        <div class="car-spec">
+                            <i class="fas fa-car"></i>
+                            <span>Передний привод</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция условий -->
+    <section id="conditions" class="py-12 dark-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Условия аренды</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-content">
+                <!-- Требования к арендатору -->
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl gold-text mb-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gold-text">Требования к арендатору</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Возраст от 21 года</li>
+                        <li>• Стаж вождения от 2 лет</li>
+                        <li>• Паспорт РФ</li>
+                        <li>• Водительское удостоверение</li>
+                    </ul>
+                </div>
+
+                <!-- Документы -->
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl gold-text mb-4">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gold-text">Необходимые документы</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Паспорт РФ</li>
+                        <li>• Водительское удостоверение</li>
+                        <li>• СНИЛС</li>
+                        <li>• ИНН</li>
+                    </ul>
+                </div>
+
+                <!-- Оплата -->
+                <div class="card-bg p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl gold-text mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gold-text">Способы оплаты</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Банковской картой</li>
+                        <li>• Наличными</li>
+                        <li>• Безналичный расчет</li>
+                        <li>• Электронные кошельки</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция контактов -->
+    <section id="contacts" class="py-12 darker-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 gold-text animate-title">Контакты</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-content">
+                <!-- Контактная информация -->
+                <div class="card-bg p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 gold-text">Наши контакты</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone gold-text text-xl w-8"></i>
+                            <div class="flex flex-col">
+                                <a href="tel:89643833383" class="text-gray-400 hover:text-[#e8b98b]">8 (964) 383-33-83</a>
+                                <a href="tel:89510454545" class="text-gray-400 hover:text-[#e8b98b]">8 (951) 045-45-45</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope gold-text text-xl w-8"></i>
+                            <span class="text-gray-400">info@premiumcar.ru</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt gold-text text-xl w-8"></i>
+                            <span class="text-gray-400">г. Пятигорск</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock gold-text text-xl w-8"></i>
+                            <span class="text-gray-400">Ежедневно с 9:00 до 21:00</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-gray-700">
+                        <h4 class="text-lg font-semibold mb-4 gold-text">Юридическая информация</h4>
+                        <div class="space-y-2 text-gray-400 text-sm">
+                            <p>ИП МКРТЧЯН БАБКЕН ОГАННЕСОВИЧ</p>
+                            <p>ИНН: 781624862246</p>
+                            <p>ОГРН/ОГРНИП: 325265100052241</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Форма обратной связи -->
+                <div class="card-bg p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 gold-text">Оставить заявку</h3>
+                    <form id="feedbackForm" class="space-y-4">
+                        <div>
+                            <input type="text" name="name" placeholder="Ваше имя" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white placeholder-gray-500">
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Ваш телефон" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white placeholder-gray-500">
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Сообщение" rows="4" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#e8b98b] text-white placeholder-gray-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#e8b98b] text-gray-900 py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="darker-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="gold-text">&copy; <span class="copyright-year">2024</span> Premium Car Rental. Все права защищены.</p>
+                    <div class="mt-2 text-gray-300">
+                        <p class="text-sm">г. Пятигорск</p>
+                        <div class="flex flex-col md:flex-row md:space-x-4 mt-1">
+                            <a href="tel:89643833383" class="text-sm hover:text-[#e8b98b]">8 (964) 383-33-83</a>
+                            <a href="tel:89510454545" class="text-sm hover:text-[#e8b98b]">8 (951) 045-45-45</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[#e8b98b] social-icon">
+                        <i class="fab fa-vk text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Фиксированная кнопка WhatsApp -->
+    <a href="https://wa.me/79991234567" class="whatsapp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Обработка мобильного меню
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Добавление классов visible для анимации
+        document.addEventListener('DOMContentLoaded', () => {
+            // Анимация заголовков и контента
+            const animatedElements = document.querySelectorAll('.animate-content, .animate-title');
+            animatedElements.forEach(element => {
+                element.classList.add('visible');
+            });
+
+            // Анимация карточек автомобилей
+            const carCards = document.querySelectorAll('.car-card');
+            carCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Обработка отправки формы
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Заявка успешно отправлена!');
+                    e.target.reset();
+                } else {
+                    alert('Ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
+            }
+        });
+    </script>
+</body>
+</html> 

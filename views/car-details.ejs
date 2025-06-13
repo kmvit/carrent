@@ -1,0 +1,161 @@
+<!-- Детальная страница автомобиля -->
+<meta name="car-id" content="<%= car.id %>">
+
+<section class="py-6 md:py-12 darker-bg">
+    <div class="container mx-auto px-4">
+        <!-- Хлебные крошки -->
+        <div class="mb-4 md:mb-8 mt-16 md:mt-20">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm md:text-base">
+                    <li class="inline-flex items-center">
+                        <a href="/" class="text-gray-400 hover:text-[#e8b98b]">
+                            <i class="fas fa-home mr-2"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <a href="/#autopark" class="text-gray-400 hover:text-[#e8b98b]">Автопарк</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="text-[#e8b98b]"><%= car.name %></span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Основная информация -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+            <!-- Галерея -->
+            <div class="card-bg rounded-lg overflow-hidden">
+                <div class="relative">
+                    <img id="mainImage" src="<%= car.images[0] %>" 
+                         alt="<%= car.name %>" 
+                         class="w-full h-[250px] md:h-[400px] object-cover">
+                    <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 px-3 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base">
+                        <span id="imageCounter" class="text-white">1/<%= car.images.length %></span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-2 p-2 md:p-4">
+                    <% car.images.forEach((image, index) => { %>
+                        <img src="<%= image %>" 
+                             alt="Thumbnail <%= index + 1 %>" 
+                             class="w-full h-16 md:h-24 object-cover rounded-lg cursor-pointer hover:opacity-75 thumbnail"
+                             data-index="<%= index %>"
+                             onclick="changeImage(this)">
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Информация об автомобиле -->
+            <div class="card-bg rounded-lg p-4 md:p-8">
+                <h1 class="text-2xl md:text-3xl font-bold gold-text mb-3 md:mb-4"><%= car.name %></h1>
+                <p class="text-gray-400 text-sm md:text-base mb-4 md:mb-6"><%= car.description %></p>
+                
+                <div class="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-tachometer-alt gold-text text-lg md:text-xl w-6 md:w-8"></i>
+                        <span class="text-gray-300 text-sm md:text-base"><%= car.power %> л.с.</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-gas-pump gold-text text-lg md:text-xl w-6 md:w-8"></i>
+                        <span class="text-gray-300 text-sm md:text-base"><%= car.fuel %></span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-cog gold-text text-lg md:text-xl w-6 md:w-8"></i>
+                        <span class="text-gray-300 text-sm md:text-base"><%= car.transmission %></span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-car gold-text text-lg md:text-xl w-6 md:w-8"></i>
+                        <span class="text-gray-300 text-sm md:text-base"><%= car.drive %></span>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 pt-4 md:pt-6 mb-6 md:mb-8">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <div>
+                            <div class="text-xl md:text-2xl font-bold gold-text mb-2">
+                                Будни: <%= car.price %> ₽/сутки
+                            </div>
+                            <% if (car.weekendPrice) { %>
+                                <div class="text-xl md:text-2xl font-bold gold-text mb-2">
+                                    Выходные: <%= car.weekendPrice %> ₽/сутки
+                                </div>
+                            <% } %>
+                            <span class="text-gray-400 text-sm md:text-base block">Почасовая: <%= car.hourlyPrice %> ₽/час (от 3 часов)</span>
+                        </div>
+                        <span class="text-gray-400 text-sm md:text-base">Минимальный срок аренды: <%= car.minRentDays %> день</span>
+                    </div>
+                    <button onclick="openBookingModal()" class="block w-full bg-[#e8b98b] text-gray-900 py-2 md:py-3 rounded-lg font-semibold hover:bg-[#d4a87a] transition text-sm md:text-base text-center">
+                        Забронировать
+                    </button>
+                </div>
+
+                <!-- Дополнительные опции -->
+                <div class="border-t border-gray-700 pt-4 md:pt-6">
+                    <h3 class="text-lg md:text-xl font-bold gold-text mb-3 md:mb-4">Дополнительные опции</h3>
+                    <div class="space-y-2 md:space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-user gold-text text-base md:text-xl w-6 md:w-8"></i>
+                                <span class="text-gray-300 text-xs sm:text-sm md:text-base truncate">Водитель</span>
+                            </div>
+                            <span class="text-gray-400 text-xs sm:text-sm md:text-base pl-6 sm:pl-0">Цена по запросу</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Условия аренды -->
+         <div class="card-bg p-4 md:p-8 rounded-lg mb-8 md:mb-12">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 gold-text">Условия аренды</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white">Требования к арендатору</h3>
+                    <ul class="space-y-2 md:space-y-3 text-gray-400">
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Возраст от 21 года
+                        </li>
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Стаж вождения от 2 лет
+                        </li>
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Паспорт РФ
+                        </li>
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Водительское удостоверение
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white">Дополнительно</h3>
+                    <ul class="space-y-2 md:space-y-3 text-gray-400">
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            При аренде более 5 суток стоимость договорная
+                        </li>
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Все цены указаны с учетом НДС
+                        </li>
+                        <li class="flex items-center text-sm md:text-base">
+                            <i class="fas fa-check-circle text-[#e8b98b] mr-2"></i>
+                            Страховка авто включена в стоимость
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/booking-modal') %> 
