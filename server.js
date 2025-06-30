@@ -5,6 +5,7 @@ const expressLayouts = require('express-ejs-layouts');
 const cars = require('./data/cars');
 const { sendBookingNotification } = require('./config/mailer');
 const apiRoutes = require('./routes/api');
+const seoConfig = require('./config/seo');
 require('dotenv').config();
 
 const app = express();
@@ -97,20 +98,20 @@ app.post('/api/feedback', async (req, res) => {
 // Подключаем API-маршруты
 app.use('/api', apiRoutes);
 
-// Маршруты
+// Главная страница
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Главная',
-        description: 'Премиум автомобили в аренду в Пятигорске',
-        keywords: 'аренда автомобилей, премиум автомобили, Пятигорск'
+        title: 'Аренда автомобилей в Пятигорске | Carskfo',
+        description: 'Аренда автомобилей в Пятигорске. Большой выбор автомобилей разных классов: премиум, бизнес, комфорт и эконом. Индивидуальные туры и трансферы.',
+        keywords: 'аренда автомобилей, прокат авто, Пятигорск, Кавказ, трансфер, туры, Mercedes, BMW, премиум автомобили'
     });
 });
 
 app.get('/contacts', (req, res) => {
     res.render('contacts', {
-        title: 'Контакты',
-        description: 'Контактная информация Premium Car Rental',
-        keywords: 'контакты, адрес, телефон, аренда автомобилей'
+        title: 'Контакты | Carskfo',
+        description: 'Контактная информация компании Carskfo. Адрес, телефоны, режим работы.',
+        keywords: 'контакты, адрес, телефоны, режим работы, Carskfo'
     });
 });
 
@@ -130,16 +131,20 @@ app.get('/car-details', (req, res) => {
     if (!car) {
         console.error(`Автомобиль не найден: ${carId}`);
         return res.status(404).render('404', {
-            title: 'Автомобиль не найден',
+            title: 'Автомобиль не найден | Carskfo',
             description: 'Запрашиваемый автомобиль не существует',
             keywords: '404, автомобиль не найден'
         });
     }
 
+    // Добавляем id к объекту car для SEO
+    car.id = carId;
+    
+    const carSeo = seoConfig.carDetails(car);
     res.render('car-details', {
-        title: car.name,
-        description: car.description,
-        keywords: `${car.name}, аренда, премиум автомобили`,
+        title: carSeo.title,
+        description: carSeo.description,
+        keywords: carSeo.keywords,
         car: car
     });
 });
@@ -147,7 +152,7 @@ app.get('/car-details', (req, res) => {
 // Обработка 404
 app.use((req, res) => {
     res.status(404).render('404', {
-        title: 'Страница не найдена',
+        title: 'Страница не найдена | Carskfo',
         description: 'Запрашиваемая страница не существует',
         keywords: '404, страница не найдена'
     });

@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> | Premium Car Rental</title>
+    <title><%= title || 'Аренда автомобилей в Пятигорске | Carskfo' %></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/styles.css">
     <%- include('partials/head') %>
+    <%- style %>
 </head>
-<body>
+<body class="bg-gray-900 text-white">
     <%- include('partials/header') %>
-    
-    <main>
-        <%- body %>
-    </main>
-
+    <%- body %>
     <%- include('partials/footer') %>
-    <%- include('partials/booking-modal') %>
-    
-    <script src="/script.js"></script>
     <%- include('partials/scripts') %>
 </body>
 </html> 
