@@ -270,6 +270,36 @@ const cars = {
             }
         }
     },
+    'mercedes-g-class': {
+        name: 'Mercedes-Benz G-Класс',
+        description: 'Премиальный внедорожник',
+        power: 367,
+        fuel: 'Бензин',
+        transmission: 'АКПП 9 ступ.',
+        drive: 'Полный привод',
+        price: '45 000',
+        weekendPrice: '50 000',
+        hourlyPrice: '7 000',
+        minRentDays: 1,
+        minRentHours: 3,
+        images: [
+            '/img/cars/merseds-g/photo_2026-04-21 17.24.21.jpeg',
+            '/img/cars/merseds-g/photo_2026-04-21 17.24.28.jpeg',
+            '/img/cars/merseds-g/photo_2026-04-21 17.24.30.jpeg'
+        ],
+        options: [
+            {
+                icon: 'fas fa-child',
+                name: 'Детское кресло',
+                price: '+500 ₽/сутки'
+            },
+            {
+                icon: 'fas fa-car',
+                name: 'Водитель',
+                price: '+3000 ₽/сутки'
+            }
+        ]
+    },
     'volkswagen-polo-auto': {
         name: 'Volkswagen Polo',
         description: 'Городской автомобиль',
@@ -609,8 +639,8 @@ const cars = {
         fuel: 'Бензин',
         transmission: 'АКПП 7 ступ.',
         drive: 'Задний привод',
-        price: '11 000',
-        weekendPrice: '13 000',
+        price: '10 000',
+        weekendPrice: '12 000',
         hourlyPrice: '2 500',
         minRentDays: 1,
         minRentHours: 3,
@@ -667,8 +697,8 @@ const cars = {
         fuel: 'Бензин',
         transmission: 'АКПП 6 ступ.',
         drive: 'Передний привод',
-        price: '5 000',
-        weekendPrice: '6 000',
+        price: '6 000',
+        weekendPrice: '7 000',
         hourlyPrice: '2 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -723,8 +753,8 @@ const cars = {
         fuel: 'Бензин',
         transmission: 'АКПП 7 ступ.',
         drive: 'Задний привод',
-        price: '11 000',
-        weekendPrice: '13 000',
+        price: '10 000',
+        weekendPrice: '12 000',
         hourlyPrice: '2 500',
         minRentDays: 1,
         minRentHours: 3,
@@ -751,8 +781,8 @@ const cars = {
         fuel: 'Бензин',
         transmission: 'АКПП 9 ступ.',
         drive: 'Задний привод',
-        price: '13 000',
-        weekendPrice: '15 000',
+        price: '15 000',
+        weekendPrice: '17 000',
         hourlyPrice: '3 000',
         minRentDays: 1,
         minRentHours: 3,
@@ -785,8 +815,8 @@ const cars = {
         fuel: 'Дизель',
         transmission: 'АКПП 9 ступ.',
         drive: 'Задний привод',
-        price: '13 000',
-        weekendPrice: '15 000',
+        price: '15 000',
+        weekendPrice: '17 000',
         hourlyPrice: '3 000',
         minRentDays: 1,
         minRentHours: 3,
