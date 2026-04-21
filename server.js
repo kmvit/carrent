@@ -101,29 +101,17 @@ app.use('/api', apiRoutes);
 // Главная страница
 app.get('/', (req, res) => {
     res.render('index', {
-<<<<<<< HEAD
         title: 'Аренда автомобилей в Пятигорске | Carskfo',
         description: 'Аренда автомобилей в Пятигорске. Большой выбор автомобилей разных классов: премиум, бизнес, комфорт и эконом. Индивидуальные туры и трансферы.',
         keywords: 'аренда автомобилей, прокат авто, Пятигорск, Кавказ, трансфер, туры, Mercedes, BMW, премиум автомобили'
-=======
-        title: 'Аренда премиум автомобилей в Пятигорске | CarSKFO',
-        description: 'Премиум автомобили в аренду в Пятигорске',
-        keywords: 'аренда автомобилей, премиум автомобили, Пятигорск, CarSKFO.ru'
->>>>>>> 32201d898214af31c0ba74b3837af119c40c9c89
     });
 });
 
 app.get('/contacts', (req, res) => {
     res.render('contacts', {
-<<<<<<< HEAD
         title: 'Контакты | Carskfo',
         description: 'Контактная информация компании Carskfo. Адрес, телефоны, режим работы.',
         keywords: 'контакты, адрес, телефоны, режим работы, Carskfo'
-=======
-        title: 'Контакты',
-        description: 'Контактная информация CarSKFO.ru',
-        keywords: 'контакты, адрес, телефон, аренда автомобилей'
->>>>>>> 32201d898214af31c0ba74b3837af119c40c9c89
     });
 });
 
@@ -154,15 +142,9 @@ app.get('/car-details', (req, res) => {
     
     const carSeo = seoConfig.carDetails(car);
     res.render('car-details', {
-<<<<<<< HEAD
         title: carSeo.title,
         description: carSeo.description,
         keywords: carSeo.keywords,
-=======
-        title: 'Аренда ' + car.name + ' в Пятигорске | CarSKFO',
-        description: car.description,
-        keywords: `${car.name}, аренда в Пятигорске, премиум автомобили`,
->>>>>>> 32201d898214af31c0ba74b3837af119c40c9c89
         car: car
     });
 });
